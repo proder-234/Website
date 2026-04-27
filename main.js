@@ -1,6 +1,5 @@
 /* ══════════════════════════════════════════════
    HOBBY TOOLTIP — hover (mouseenter) + touch (touchstart)
-   No click required.
 ══════════════════════════════════════════════ */
 document.querySelectorAll('.hobby-chip').forEach(chip => {
   const tooltip = chip.querySelector('.hobby-tooltip');
@@ -34,12 +33,12 @@ document.addEventListener('click', (e) => {
 });
 
 function closeHobby(e, force) {
-      if (force || (e && e.target === document.getElementById('hobbyOverlay'))) {
-        document.getElementById('hobbyOverlay').classList.remove('open');
-        document.body.style.overflow = '';
-      }
-    }
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeHobby(null, true); });
+  if (force || (e && e.target === document.getElementById('hobbyOverlay'))) {
+    document.getElementById('hobbyOverlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeHobby(null, true); });
 
 /* ══════════════════════════════════════════════
    SCROLL REVEAL
@@ -54,13 +53,9 @@ revealEls.forEach(el => revealObs.observe(el));
 
 /* ══════════════════════════════════════════════
    NAV ACTIVE STATE
-   — scroll-position based, reliable on initial load
 ══════════════════════════════════════════════ */
 const navLinks = document.querySelectorAll('.nav-pill a');
 
-// Each entry maps a nav href to the element whose top edge we track.
-// section-anchors sit 80px above the visual section, which is perfect
-// for triggering a little before the section fully arrives.
 const navTargets = [
   { href: '#hero',      el: document.getElementById('hero') },
   { href: '#published', el: document.getElementById('published') },
@@ -76,9 +71,6 @@ function setActiveNav(href) {
 
 function updateNav() {
   const scrollY = window.scrollY;
-
-  // Walk through targets in order; the last one whose top edge has
-  // scrolled past 40% of the viewport height wins.
   let active = navTargets[0];
   for (const t of navTargets) {
     const top = t.el.getBoundingClientRect().top + scrollY;
@@ -89,10 +81,8 @@ function updateNav() {
   setActiveNav(active.href);
 }
 
-// Run immediately so Home is active before any scroll
 updateNav();
 
-// Re-run on scroll (rAF-throttled for performance)
 let rafPending = false;
 window.addEventListener('scroll', () => {
   if (rafPending) return;
@@ -100,7 +90,6 @@ window.addEventListener('scroll', () => {
   requestAnimationFrame(() => { updateNav(); rafPending = false; });
 }, { passive: true });
 
-// Instant feedback when the user clicks a nav link
 navLinks.forEach(a => {
   a.addEventListener('click', () => {
     setActiveNav(a.getAttribute('href'));
@@ -108,10 +97,8 @@ navLinks.forEach(a => {
 });
 
 /* ══════════════════════════════════════════════
-   VIDEO HELPERS — unified shell versions
+   VIDEO HELPERS
 ══════════════════════════════════════════════ */
-
-/* iPhone shell: remove placeholder, inject <video> into screen-wrap */
 function playVideoPhone(placeholderId, src) {
   const ph = document.getElementById(placeholderId);
   if (!ph) return;
@@ -127,7 +114,6 @@ function playVideoPhone(placeholderId, src) {
   sw.appendChild(v);
 }
 
-/* iPad unified shell: remove placeholder, inject <video> into .ipad-u-screen */
 function playVideoIPadU(placeholderId, screenId, src) {
   const ph = document.getElementById(placeholderId);
   const scr = document.getElementById(screenId);
@@ -143,7 +129,6 @@ function playVideoIPadU(placeholderId, screenId, src) {
   scr.appendChild(v);
 }
 
-/* Mac unified shell: remove placeholder, inject <video> into .mac-u-screen */
 function playVideoMacU(placeholderId, screenId, src) {
   const ph = document.getElementById(placeholderId);
   const scr = document.getElementById(screenId);
@@ -155,10 +140,10 @@ function playVideoMacU(placeholderId, screenId, src) {
   v.autoplay = true;
   v.playsInline = true;
   v.muted = true;
-  v.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;object-fit:contain;border-radius:23px;'; scr.appendChild(v);
+  v.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;object-fit:contain;border-radius:23px;';
+  scr.appendChild(v);
 }
 
-/* Space Invaders shell:*/
 function playVideoSI(placeholderId, screenId, src) {
   const ph = document.getElementById(placeholderId);
   const scr = document.getElementById(screenId);
@@ -173,8 +158,6 @@ function playVideoSI(placeholderId, screenId, src) {
   v.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;object-fit:content;';
   scr.appendChild(v);
 }
-
-
 
 /* ══════════════════════════════════════════════
    DEVICE TOGGLE
@@ -238,18 +221,18 @@ window.addEventListener('load', () => {
 });
 
 /* ══════════════════════════════════════════════
-   BIO TYPEWRITER — quote only
+   BIO TYPEWRITER
 ══════════════════════════════════════════════ */
 (function () {
   const HOOK = '"We are what we repeatedly do. Excellence, then, is not an act, but a habit." — Aristotle';
-  const hookEl  = document.querySelector('.hook-text');
+  const hookEl   = document.querySelector('.hook-text');
   const cursorEl = document.querySelector('.hook-cursor');
   if (!hookEl || !cursorEl) return;
 
-  const TYPE_SPEED   = 38;   
-  const DELETE_SPEED = 18;   
-  const PAUSE_AFTER_TYPE   = 2200; 
-  const PAUSE_AFTER_DELETE = 600;  
+  const TYPE_SPEED         = 38;
+  const DELETE_SPEED       = 18;
+  const PAUSE_AFTER_TYPE   = 2200;
+  const PAUSE_AFTER_DELETE = 600;
 
   let i = 0;
   let deleting = false;
@@ -277,3 +260,33 @@ window.addEventListener('load', () => {
   }
   setTimeout(tick, 700);
 })();
+
+/* ══════════════════════════════════════════════
+   THEME TOGGLE
+   Reads/writes localStorage. Applies data-theme="dark"
+   to <html>. The early-apply script in <head> prevents
+   flash on reload.
+══════════════════════════════════════════════ */
+const KEY = 'portfolio-theme';
+
+// Apply saved theme right away (redundant safety net)
+if (localStorage.getItem(KEY) === 'dark') {
+  document.documentElement.setAttribute('data-theme', 'dark');
+}
+
+const themeBtn = document.getElementById('themeToggle');
+
+if (themeBtn) {
+  themeBtn.addEventListener('click', function () {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    if (isDark) {
+      document.documentElement.removeAttribute('data-theme');
+      localStorage.setItem(KEY, 'light');
+    } else {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      localStorage.setItem(KEY, 'dark');
+    }
+  });
+} else {
+  console.error('Theme toggle button #themeToggle not found in DOM');
+}

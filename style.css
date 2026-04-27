@@ -15,28 +15,26 @@
     --rose-lt: rgba(196, 140, 138, 0.25);
     --sand: rgba(185, 168, 150, 0.85);
     --cream: rgba(220, 208, 195, 0.5);
-    --glass: rgba(210, 200, 192, 0.28);
-    --glass-b: rgba(240, 230, 220, 0.4);
+    --glass: rgba(255, 251, 249, 0.80);
+    --glass-b: rgba(255, 246, 242, 0.90);
     --ink: rgba(45, 30, 28, 0.97);
     --ink-mid: rgba(75, 58, 55, 0.92);
     --ink-lt: rgba(105, 85, 80, 0.82);
     --white95: rgba(255, 248, 245, 0.95);
 
-    --sh-frame: linear-gradient(160deg, rgba(218, 204, 188, 0.96) 0%, rgba(196, 179, 161, 0.94) 50%, rgba(208, 192, 174, 0.96) 100%);
-    --sh-bdr: 1.5px solid rgba(198, 182, 165, 0.55);
-    --sh-shd: 0 0 0 0.5px rgba(198, 182, 165, 0.42), inset 0 1px 0 rgba(255, 248, 245, 0.38), inset 0 -1px 0 rgba(158, 142, 126, 0.14), 0 18px 44px rgba(95, 80, 74, 0.22), 0 5px 14px rgba(95, 80, 74, 0.13);
-    --sh-screen-bg: rgba(205, 195, 182, 0.92);
-    --sh-screen-bdr: 1px solid rgba(238, 226, 214, 0.45);
-    --sh-btn-bg: rgba(196, 179, 161, 0.78);
+    --sh-frame: linear-gradient(160deg, rgba(238, 230, 222, 0.98) 0%, rgba(222, 212, 200, 0.96) 50%, rgba(232, 224, 214, 0.98) 100%);
+    --sh-bdr: 1.5px solid rgba(215, 202, 188, 0.60);
+    --sh-shd: 0 0 0 0.5px rgba(210, 198, 184, 0.48), inset 0 1px 0 rgba(255, 250, 246, 0.55), inset 0 -1px 0 rgba(165, 148, 132, 0.14), 0 18px 44px rgba(95, 80, 74, 0.16), 0 5px 14px rgba(95, 80, 74, 0.09);
+    --sh-screen-bg: rgba(238, 230, 220, 0.94);
+    --sh-screen-bdr: 1px solid rgba(255, 246, 236, 0.50);
+    --sh-btn-bg: rgba(214, 202, 188, 0.82);
 
-    /* Fluid spacing scale */
     --sp-xs: clamp(6px, 1vw, 10px);
     --sp-sm: clamp(10px, 1.5vw, 16px);
     --sp-md: clamp(14px, 2vw, 22px);
     --sp-lg: clamp(20px, 3vw, 36px);
     --sp-xl: clamp(32px, 5vw, 64px);
 
-    /* Fluid type scale */
     --text-xs:  clamp(9px,  1vw,   11px);
     --text-sm:  clamp(11px, 1.1vw, 13px);
     --text-base:clamp(12px, 1.3vw, 14px);
@@ -57,7 +55,7 @@ body {
     font-family: 'DM Sans', sans-serif;
     background: #b8bfc8;
     color: var(--ink);
-    overflow-x: hidden;
+    overflow-x: hidden; /* overflow-x contained here, NOT on .scroll-root */
 }
 
 img, video {
@@ -90,15 +88,15 @@ img, video {
     filter: blur(45px);
 }
 
-.bk1 { width: 280px; height: 220px; background: rgba(235, 225, 210, 0.5); top: -60px; right: 5%; }
-.bk2 { width: 180px; height: 180px; background: rgba(240, 230, 215, 0.45); top: 5%; right: 25%; animation: sway 7s ease-in-out infinite alternate; }
-.bk3 { width: 220px; height: 160px; background: rgba(230, 220, 200, 0.4); top: 20%; right: -30px; }
-.bk4 { width: 150px; height: 150px; background: rgba(195, 175, 145, 0.35); top: 40%; right: 10%; animation: sway 9s ease-in-out infinite alternate-reverse; }
-.bk5 { width: 200px; height: 120px; background: rgba(180, 165, 140, 0.3); bottom: 10%; right: 20%; }
-.bk6 { width: 300px; height: 250px; background: rgba(130, 145, 160, 0.25); bottom: -40px; left: -60px; }
-.bk7 { width: 160px; height: 160px; background: rgba(155, 168, 180, 0.3); top: 60%; left: 5%; animation: sway 6s ease-in-out infinite alternate; }
-.bk8 { width: 100px; height: 80px; background: rgba(245, 238, 228, 0.5); top: 35%; left: 20%; filter: blur(30px); }
-.bk9 { width: 80px; height: 80px; background: rgba(240, 232, 218, 0.45); bottom: 30%; left: 35%; filter: blur(25px); }
+.bk1 { width: 280px; height: 220px; background: rgba(255, 245, 235, 0.60); top: -60px; right: 5%; }
+.bk2 { width: 180px; height: 180px; background: rgba(255, 240, 228, 0.55); top: 5%; right: 25%; animation: sway 7s ease-in-out infinite alternate; }
+.bk3 { width: 220px; height: 160px; background: rgba(250, 238, 224, 0.50); top: 20%; right: -30px; }
+.bk4 { width: 150px; height: 150px; background: rgba(230, 215, 198, 0.45); top: 40%; right: 10%; animation: sway 9s ease-in-out infinite alternate-reverse; }
+.bk5 { width: 200px; height: 120px; background: rgba(220, 205, 188, 0.40); bottom: 10%; right: 20%; }
+.bk6 { width: 300px; height: 250px; background: rgba(205, 195, 182, 0.35); bottom: -40px; left: -60px; }
+.bk7 { width: 160px; height: 160px; background: rgba(215, 205, 192, 0.38); top: 60%; left: 5%; animation: sway 6s ease-in-out infinite alternate; }
+.bk8 { width: 100px; height: 80px; background: rgba(255, 248, 238, 0.60); top: 35%; left: 20%; filter: blur(30px); }
+.bk9 { width: 80px; height: 80px; background: rgba(252, 244, 232, 0.55); bottom: 30%; left: 35%; filter: blur(25px); }
 
 @keyframes sway {
     from { transform: translate(0, 0) scale(1); }
@@ -126,9 +124,55 @@ img, video {
 .scroll-root {
     position: relative;
     z-index: 10;
-    overflow-x: hidden;
+    /* overflow-x REMOVED — was clipping position:fixed .theme-toggle in Safari/WebKit */
     padding-top: clamp(52px, 7vw, 72px);
 }
+
+/* ══════════════════════════════════════════════
+   THEME TOGGLE BUTTON
+   Fixed top-right. overflow-x on body (not scroll-root)
+   ensures this never gets clipped.
+══════════════════════════════════════════════ */
+.theme-toggle {
+    position: fixed;
+    top: clamp(8px, 1.2vw, 14px);
+    right: clamp(14px, 2.5vw, 26px);
+    z-index: 9999;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(196, 162, 158, 0.42);
+    border: 1px solid rgba(248, 238, 230, 0.58);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 4px 14px rgba(100, 85, 82, 0.14);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    line-height: 1;
+    color: rgba(55, 38, 36, 0.92);
+    transition: background 0.22s, transform 0.22s, box-shadow 0.22s;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.theme-toggle:hover {
+    background: rgba(255, 248, 245, 0.58);
+    transform: scale(1.10);
+    box-shadow: 0 6px 18px rgba(100, 85, 82, 0.22);
+}
+
+.theme-toggle:active { transform: scale(0.94); }
+
+.theme-toggle .icon-moon { display: inline; }
+.theme-toggle .icon-sun  { display: none; }
+
+html[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
+html[data-theme="dark"] .theme-toggle .icon-sun  { display: inline; }
 
 /* ══════════════════════════════════════════════
    NAV
@@ -150,11 +194,11 @@ nav {
     justify-content: center;
     gap: 2px;
     background: rgba(196, 162, 158, 0.4);
-    border: 1px solid rgba(240, 228, 218, 0.4);
+    border: 1px solid rgba(248, 238, 230, 0.55);
     backdrop-filter: blur(20px);
     border-radius: 40px;
     padding: clamp(3px, 0.5vw, 5px) clamp(5px, 0.8vw, 8px);
-    box-shadow: 0 4px 20px rgba(100, 85, 82, 0.15);
+    box-shadow: 0 4px 20px rgba(100, 85, 82, 0.12);
     max-width: 100%;
 }
 
@@ -172,7 +216,7 @@ nav {
 
 .nav-pill a:hover,
 .nav-pill a.active {
-    background: rgba(255, 248, 245, 0.35);
+    background: rgba(255, 248, 245, 0.50);
     color: rgba(40, 25, 22, 0.98);
 }
 
@@ -191,14 +235,12 @@ nav {
     width: 100%;
     max-width: min(1200px, 100%);
     display: grid;
-    /* fluid: right column shrinks from 220px → 160px between 1200px→820px, then collapses */
     grid-template-columns: clamp(160px, 19vw, 220px) 1fr;
     gap: clamp(14px, 2.5vw, 36px);
     align-items: start;
 }
 
 .hero-right {
-    /* matches the fluid column width */
     width: clamp(160px, 19vw, 220px);
     display: flex;
     flex-direction: column;
@@ -281,12 +323,12 @@ nav {
     display: flex;
     align-items: center;
     gap: 7px;
-    background: rgba(196, 162, 158, 0.45);
-    border: 1px solid rgba(220, 195, 190, 0.5);
+    background: rgba(210, 180, 172, 0.50);
+    border: 1px solid rgba(228, 208, 200, 0.60);
     backdrop-filter: blur(16px);
     border-radius: 20px;
     padding: clamp(5px, 0.8vw, 7px) clamp(10px, 1.4vw, 14px);
-    box-shadow: 0 4px 16px rgba(100, 90, 85, 0.12);
+    box-shadow: 0 4px 16px rgba(100, 90, 85, 0.10);
 }
 
 .status-dot {
@@ -328,8 +370,8 @@ nav {
     font-weight: 500;
     text-decoration: none;
     letter-spacing: 0.04em;
-    background: rgba(215, 205, 197, 0.35);
-    border: 1px solid rgba(240, 228, 218, 0.5);
+    background: rgba(245, 238, 232, 0.60);
+    border: 1px solid rgba(240, 228, 218, 0.65);
     color: rgba(55, 38, 36, 0.92);
     backdrop-filter: blur(8px);
     transition: transform 0.2s, background 0.2s;
@@ -337,7 +379,7 @@ nav {
 
 .social-btn:hover {
     transform: translateY(-2px);
-    background: rgba(215, 205, 197, 0.55);
+    background: rgba(245, 238, 232, 0.82);
 }
 
 /* ── AT A GLANCE ── */
@@ -352,16 +394,16 @@ nav {
 /* ── MAIN CARD ── */
 .card {
     width: 100%;
-    background: var(--glass);
-    border: 1px solid var(--glass-b);
+    background: rgba(255, 251, 249, 0.82);
+    border: 1px solid rgba(240, 230, 222, 0.90);
     backdrop-filter: blur(28px);
     border-radius: clamp(18px, 2.5vw, 26px);
     padding: clamp(16px, 2.5vw, 36px) clamp(14px, 2vw, 30px) clamp(16px, 2.5vw, 30px);
     box-shadow:
-        0 8px 48px rgba(80, 70, 65, 0.18),
-        0 2px 8px rgba(80, 70, 65, 0.08),
-        inset 0 1px 0 rgba(255, 255, 255, 0.45),
-        inset 0 -1px 0 rgba(200, 185, 175, 0.2);
+        0 8px 48px rgba(80, 70, 65, 0.14),
+        0 2px 8px rgba(80, 70, 65, 0.06),
+        inset 0 1px 0 rgba(255, 255, 255, 0.70),
+        inset 0 -1px 0 rgba(200, 185, 175, 0.15);
     animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.35s both;
     position: relative;
     overflow: hidden;
@@ -372,7 +414,7 @@ nav {
     position: absolute;
     top: -60px; right: -60px;
     width: 200px; height: 200px;
-    background: radial-gradient(circle, rgba(235, 220, 205, 0.4) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(255, 240, 228, 0.45) 0%, transparent 70%);
     pointer-events: none;
 }
 
@@ -533,11 +575,11 @@ nav {
     padding: 0;
     overflow: hidden;
     border-radius: 22%;
-    background: rgba(215, 205, 197, 0.5);
+    background: rgba(245, 238, 232, 0.65);
     box-shadow:
-        0 2px 8px rgba(80, 68, 65, 0.22),
-        0 1px 2px rgba(80, 68, 65, 0.12),
-        inset 0 0 0 0.5px rgba(255, 255, 255, 0.28);
+        0 2px 8px rgba(80, 68, 65, 0.18),
+        0 1px 2px rgba(80, 68, 65, 0.10),
+        inset 0 0 0 0.5px rgba(255, 255, 255, 0.45);
     position: relative;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
     display: flex;
@@ -551,9 +593,9 @@ nav {
 .app-icon-btn:hover {
     transform: scale(1.1) translateY(-3px);
     box-shadow:
-        0 8px 22px rgba(80, 68, 65, 0.26),
-        0 2px 4px rgba(80, 68, 65, 0.12),
-        inset 0 0 0 0.5px rgba(255, 255, 255, 0.28);
+        0 8px 22px rgba(80, 68, 65, 0.22),
+        0 2px 4px rgba(80, 68, 65, 0.10),
+        inset 0 0 0 0.5px rgba(255, 255, 255, 0.45);
 }
 
 .app-icon-btn img {
@@ -649,14 +691,14 @@ nav {
     left: 50%;
     transform: translateX(-50%) scale(0.9);
     width: clamp(180px, 24vw, 220px);
-    background: rgba(225, 215, 207, 0.98);
+    background: rgba(255, 250, 246, 0.98);
     backdrop-filter: blur(24px);
-    border: 1px solid rgba(240, 230, 220, 0.65);
+    border: 1px solid rgba(240, 230, 220, 0.70);
     border-radius: 18px;
     padding: clamp(12px, 1.6vw, 16px);
     box-shadow:
-        0 20px 56px rgba(55, 40, 38, 0.28),
-        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+        0 20px 56px rgba(55, 40, 38, 0.22),
+        inset 0 1px 0 rgba(255, 255, 255, 0.75);
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.22s ease, transform 0.22s cubic-bezier(0.22, 1, 0.36, 1);
@@ -681,7 +723,7 @@ nav {
     left: 50%;
     transform: translateX(-50%);
     border: 6px solid transparent;
-    border-top-color: rgba(225, 215, 207, 0.98);
+    border-top-color: rgba(255, 250, 246, 0.98);
 }
 .hobby-chip:first-child .hobby-tooltip::after { left: 20px; transform: none; }
 .hobby-chip:last-child .hobby-tooltip::after  { left: auto; right: 20px; transform: none; }
@@ -743,14 +785,13 @@ nav {
    APP CASE
 ══════════════════════════════════════════════ */
 .app-case {
-    background: var(--glass);
-    border: 1px solid var(--glass-b);
+    background: rgba(255, 251, 249, 0.82);
+    border: 1px solid rgba(240, 230, 222, 0.90);
     backdrop-filter: blur(24px);
     border-radius: clamp(20px, 3vw, 28px);
     padding: clamp(16px, 2.5vw, 38px);
     margin-bottom: clamp(14px, 2vw, 28px);
-    box-shadow: 0 8px 40px rgba(80, 70, 65, 0.14);
-    /* fluid: stays 2-col until ~700px then single col */
+    box-shadow: 0 8px 40px rgba(80, 70, 65, 0.11);
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
     gap: clamp(18px, 3vw, 40px);
@@ -765,7 +806,7 @@ nav {
     top: -80px; right: -80px;
     width: 260px; height: 260px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(235, 218, 205, 0.3) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(255, 238, 225, 0.32) 0%, transparent 70%);
     pointer-events: none;
 }
 
@@ -784,20 +825,20 @@ nav {
     height: clamp(44px, 5.5vw, 60px);
     flex-shrink: 0;
     box-shadow:
-        0 2px 8px rgba(80, 68, 65, 0.22),
-        0 1px 2px rgba(80, 68, 65, 0.12),
-        inset 0 0 0 0.5px rgba(255, 255, 255, 0.28);
+        0 2px 8px rgba(80, 68, 65, 0.18),
+        0 1px 2px rgba(80, 68, 65, 0.10),
+        inset 0 0 0 0.5px rgba(255, 255, 255, 0.45);
     position: relative;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
-    background: rgba(215, 205, 197, 0.5);
+    background: rgba(245, 238, 232, 0.65);
 }
 
 .app-icon-big:hover {
     transform: scale(1.08) translateY(-2px);
     box-shadow:
-        0 8px 22px rgba(80, 68, 65, 0.26),
-        0 2px 4px rgba(80, 68, 65, 0.12),
-        inset 0 0 0 0.5px rgba(255, 255, 255, 0.28);
+        0 8px 22px rgba(80, 68, 65, 0.22),
+        0 2px 4px rgba(80, 68, 65, 0.10),
+        inset 0 0 0 0.5px rgba(255, 255, 255, 0.45);
 }
 
 .app-icon-big img {
@@ -938,8 +979,8 @@ nav {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(240, 232, 222, 0.7);
-    border: 1px solid rgba(240, 228, 218, 0.6);
+    background: rgba(248, 242, 236, 0.80);
+    border: 1px solid rgba(240, 228, 218, 0.65);
     backdrop-filter: blur(8px);
     color: rgba(55, 42, 40, 0.8);
     width: 28px;
@@ -956,7 +997,7 @@ nav {
     line-height: 1;
 }
 
-.strip-nav:hover { background: rgba(240, 232, 222, 0.95); }
+.strip-nav:hover { background: rgba(248, 242, 236, 0.98); }
 .strip-prev { left: 6px; }
 .strip-next { right: 6px; }
 
@@ -986,8 +1027,8 @@ nav {
 
 .phone-frame {
     width: clamp(80px, 11vw, 110px);
-    background: rgba(240, 232, 222, 0.35);
-    border: 1.5px solid rgba(240, 228, 218, 0.55);
+    background: rgba(248, 242, 236, 0.50);
+    border: 1.5px solid rgba(240, 228, 218, 0.65);
     border-radius: clamp(16px, 2.2vw, 22px);
     overflow: hidden;
     aspect-ratio: 9/19;
@@ -1000,7 +1041,7 @@ nav {
     font-size: 11px;
     text-align: center;
     backdrop-filter: blur(8px);
-    box-shadow: 0 6px 24px rgba(80, 70, 65, 0.12);
+    box-shadow: 0 6px 24px rgba(80, 70, 65, 0.10);
     flex-shrink: 0;
     position: relative;
     cursor: pointer;
@@ -1059,15 +1100,15 @@ nav {
 
 .iphone-shell {
     width: clamp(140px, 22vw, 210px);
-    background: linear-gradient(160deg, rgba(210, 195, 178, 0.9) 0%, rgba(185, 168, 150, 0.88) 50%, rgba(196, 180, 162, 0.9) 100%);
+    background: linear-gradient(160deg, rgba(232, 222, 210, 0.92) 0%, rgba(210, 196, 178, 0.90) 50%, rgba(222, 208, 190, 0.92) 100%);
     border-radius: 42px;
     padding: 5px;
     box-shadow:
-        0 0 0 0.5px rgba(200, 185, 168, 0.45),
-        inset 0 1px 0 rgba(255, 248, 245, 0.3),
-        inset 0 -1px 0 rgba(160, 145, 130, 0.15),
-        0 24px 60px rgba(100, 85, 80, 0.22),
-        0 8px 20px rgba(100, 85, 80, 0.14);
+        0 0 0 0.5px rgba(215, 200, 182, 0.50),
+        inset 0 1px 0 rgba(255, 248, 245, 0.35),
+        inset 0 -1px 0 rgba(165, 150, 135, 0.15),
+        0 24px 60px rgba(100, 85, 80, 0.18),
+        0 8px 20px rgba(100, 85, 80, 0.11);
     position: relative;
     aspect-ratio: 1179/2556;
     flex-shrink: 0;
@@ -1079,9 +1120,9 @@ nav {
     position: absolute;
     left: -3px; top: 22%;
     width: 3px; height: 10%;
-    background: linear-gradient(180deg, rgba(200, 185, 168, 0.9), rgba(175, 158, 142, 0.9));
+    background: linear-gradient(180deg, rgba(215, 200, 182, 0.92), rgba(190, 175, 158, 0.92));
     border-radius: 2px 0 0 2px;
-    box-shadow: 0 18px 0 rgba(185, 168, 150, 0.85), 0 36px 0 rgba(185, 168, 150, 0.85);
+    box-shadow: 0 18px 0 rgba(200, 185, 168, 0.88), 0 36px 0 rgba(200, 185, 168, 0.88);
 }
 
 .iphone-shell::after {
@@ -1089,18 +1130,18 @@ nav {
     position: absolute;
     right: -3px; top: 28%;
     width: 3px; height: 14%;
-    background: linear-gradient(180deg, rgba(200, 185, 168, 0.9), rgba(175, 158, 142, 0.9));
+    background: linear-gradient(180deg, rgba(215, 200, 182, 0.92), rgba(190, 175, 158, 0.92));
     border-radius: 0 2px 2px 0;
 }
 
 .iphone-screen-wrap {
     width: 100%;
     height: 100%;
-    background: rgba(225, 215, 205, 0.3);
+    background: rgba(240, 232, 222, 0.35);
     border-radius: 34px;
     overflow: hidden;
     position: relative;
-    border: 1px solid rgba(240, 228, 218, 0.4);
+    border: 1px solid rgba(250, 240, 230, 0.45);
 }
 
 .iphone-dynamic-island {
@@ -1110,10 +1151,10 @@ nav {
     transform: translateX(-50%);
     width: 38%;
     height: 22px;
-    background: rgba(185, 168, 150, 0.75);
+    background: rgba(195, 180, 162, 0.78);
     border-radius: 20px;
     z-index: 10;
-    box-shadow: inset 0 1px 2px rgba(160, 142, 125, 0.4);
+    box-shadow: inset 0 1px 2px rgba(165, 148, 132, 0.4);
 }
 
 .iphone-video-placeholder {
@@ -1124,14 +1165,14 @@ nav {
     align-items: center;
     justify-content: center;
     gap: 8px;
-    background: rgba(210, 200, 190, 0.55);
+    background: rgba(235, 226, 215, 0.65);
     backdrop-filter: blur(12px);
     cursor: pointer;
     transition: background 0.2s;
     border-radius: 34px;
 }
 
-.iphone-video-placeholder:hover { background: rgba(210, 200, 190, 0.7); }
+.iphone-video-placeholder:hover { background: rgba(235, 226, 215, 0.82); }
 
 .iphone-play-btn {
     width: 44px;
@@ -1239,7 +1280,7 @@ nav {
     position: absolute;
     right: -3px; top: 14%;
     width: 3px; height: 7%;
-    background: rgba(192, 175, 157, 0.82);
+    background: rgba(205, 190, 172, 0.85);
     border-radius: 0 2px 2px 0;
 }
 
@@ -1248,9 +1289,9 @@ nav {
     position: absolute;
     left: -3px; top: 16%;
     width: 3px; height: 6%;
-    background: rgba(192, 175, 157, 0.82);
+    background: rgba(205, 190, 172, 0.85);
     border-radius: 2px 0 0 2px;
-    box-shadow: 0 18px 0 rgba(192, 175, 157, 0.82);
+    box-shadow: 0 18px 0 rgba(205, 190, 172, 0.85);
 }
 
 .ipad-u-screen {
@@ -1271,7 +1312,7 @@ nav {
     left: 50%;
     transform: translateX(-50%);
     width: 6px; height: 6px;
-    background: rgba(160, 143, 127, 0.62);
+    background: rgba(168, 152, 136, 0.65);
     border-radius: 50%;
     z-index: 10;
 }
@@ -1282,7 +1323,7 @@ nav {
     left: 50%;
     transform: translateX(-50%);
     width: 26%; height: 2.5px;
-    background: rgba(160, 143, 127, 0.38);
+    background: rgba(168, 152, 136, 0.40);
     border-radius: 4px;
     z-index: 10;
 }
@@ -1334,8 +1375,8 @@ nav {
 
 .si-u-bar {
     height: 26px;
-    background: rgba(196, 179, 161, 0.52);
-    border-bottom: 1px solid rgba(198, 182, 165, 0.28);
+    background: rgba(215, 202, 188, 0.55);
+    border-bottom: 1px solid rgba(210, 198, 182, 0.30);
     display: flex;
     align-items: center;
     padding: 0 10px;
@@ -1381,12 +1422,12 @@ nav {
     justify-content: center;
     gap: 8px;
     cursor: pointer;
-    background: rgba(205, 195, 182, 0.92);
+    background: rgba(235, 226, 214, 0.94);
     backdrop-filter: blur(10px);
     transition: background 0.2s;
 }
 
-.u-placeholder:hover { background: rgba(195, 185, 172, 0.96); }
+.u-placeholder:hover { background: rgba(228, 218, 206, 0.98); }
 .ipad-u-screen .u-placeholder { border-radius: 23px; }
 
 .u-play-btn {
@@ -1427,12 +1468,12 @@ nav {
 }
 
 .blog-card {
-    background: var(--glass);
-    border: 1px solid var(--glass-b);
+    background: rgba(255, 251, 249, 0.82);
+    border: 1px solid rgba(240, 230, 222, 0.90);
     backdrop-filter: blur(24px);
     border-radius: 22px;
     padding: clamp(18px, 2.5vw, 28px);
-    box-shadow: 0 6px 28px rgba(80, 70, 65, 0.12);
+    box-shadow: 0 6px 28px rgba(80, 70, 65, 0.10);
     text-decoration: none;
     display: block;
     transition: transform 0.25s;
@@ -1448,7 +1489,7 @@ nav {
     position: absolute;
     top: -40px; right: -40px;
     width: 130px; height: 130px;
-    background: radial-gradient(circle, rgba(235, 218, 205, 0.3) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(255, 238, 225, 0.32) 0%, transparent 70%);
     pointer-events: none;
 }
 
@@ -1547,7 +1588,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(90, 75, 70, 0.25);
+    background: rgba(90, 75, 70, 0.20);
     backdrop-filter: blur(6px);
     opacity: 0;
     pointer-events: none;
@@ -1558,12 +1599,12 @@ footer {
 
 .hobby-popup {
     width: min(320px, 88vw);
-    background: rgba(225, 215, 207, 0.98);
-    border: 1px solid rgba(240, 230, 220, 0.6);
+    background: rgba(255, 250, 246, 0.98);
+    border: 1px solid rgba(240, 230, 220, 0.65);
     backdrop-filter: blur(32px);
     border-radius: 26px;
     padding: clamp(20px, 3vw, 28px) clamp(18px, 2.5vw, 26px) clamp(18px, 2.5vw, 24px);
-    box-shadow: 0 20px 60px rgba(55, 40, 38, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    box-shadow: 0 20px 60px rgba(55, 40, 38, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.75);
     transform: scale(0.92) translateY(12px);
     transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
     position: relative;
@@ -1621,7 +1662,6 @@ footer {
 
 /* ══════════════════════════════════════════════
    LARGE SCREENS  ≥ 1400px
-   Let things breathe more; constrain max-widths
 ══════════════════════════════════════════════ */
 @media (min-width: 1400px) {
     .hero-inner {
@@ -1639,11 +1679,9 @@ footer {
 }
 
 /* ══════════════════════════════════════════════
-   TABLET PORTRAIT — single layout collapse
-   Hero still 2-col; app-case already auto-fits
+   TABLET PORTRAIT
 ══════════════════════════════════════════════ */
 @media (max-width: 800px) {
-    /* Hero collapses to single column */
     .hero-inner {
         grid-template-columns: 1fr;
         gap: 18px;
@@ -1673,7 +1711,6 @@ footer {
 
     .hero-left { width: 100%; }
 
-    /* Blog: already uses auto-fit; force single col */
     .blog-card-featured { grid-column: 1; }
 
     footer {
@@ -1718,7 +1755,6 @@ footer {
         justify-content: center;
     }
 
-    /* Vertical stack when extremely narrow */
     .hero-right { flex-direction: column; align-items: center; }
 
     .hobby-chip { flex: 0 0 calc(50% - 4px); }
@@ -1743,7 +1779,6 @@ footer {
 
 /* ══════════════════════════════════════════════
    MINIMUM VIABLE — ≤ 320px
-   Graceful degradation, nothing breaks
 ══════════════════════════════════════════════ */
 @media (max-width: 320px) {
     .nav-pill { padding: 3px 4px; gap: 0; }
@@ -1792,7 +1827,7 @@ footer {
         top: auto !important;
         bottom: 100% !important;
         border-top-color: transparent !important;
-        border-bottom-color: rgba(225, 215, 207, 0.98) !important;
+        border-bottom-color: rgba(255, 250, 246, 0.98) !important;
     }
 
     .hobby-chip:first-child .hobby-tooltip {

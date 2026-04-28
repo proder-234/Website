@@ -225,40 +225,25 @@ window.addEventListener('load', () => {
 ══════════════════════════════════════════════ */
 (function () {
   const HOOK = '"We are what we repeatedly do. Excellence, then, is not an act, but a habit." — Aristotle';
-  const hookEl   = document.querySelector('.hook-text');
+  const hookEl = document.querySelector('.hook-text');
   const cursorEl = document.querySelector('.hook-cursor');
+  
   if (!hookEl || !cursorEl) return;
 
-  const TYPE_SPEED         = 38;
-  const DELETE_SPEED       = 18;
-  const PAUSE_AFTER_TYPE   = 2200;
-  const PAUSE_AFTER_DELETE = 600;
-
+  const TYPE_SPEED = 40; 
   let i = 0;
-  let deleting = false;
 
-  function tick() {
-    if (!deleting) {
-      hookEl.textContent = HOOK.slice(0, i + 1);
+  function type() {
+    if (i <= HOOK.length) {
+      hookEl.textContent = HOOK.substring(0, i);
       i++;
-      if (i === HOOK.length) {
-        deleting = true;
-        setTimeout(tick, PAUSE_AFTER_TYPE);
-      } else {
-        setTimeout(tick, TYPE_SPEED);
-      }
+      setTimeout(type, TYPE_SPEED);
     } else {
-      hookEl.textContent = HOOK.slice(0, i - 1);
-      i--;
-      if (i === 0) {
-        deleting = false;
-        setTimeout(tick, PAUSE_AFTER_DELETE);
-      } else {
-        setTimeout(tick, DELETE_SPEED);
-      }
+      cursorEl.classList.add('done');
     }
   }
-  setTimeout(tick, 700);
+
+  setTimeout(type, 800);
 })();
 
 /* ══════════════════════════════════════════════
